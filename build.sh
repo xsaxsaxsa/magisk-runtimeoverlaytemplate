@@ -10,11 +10,11 @@ OVERLAY_PATH=system/product/overlay
   exit 1
 }
 
-export PATH="${ANDROID_HOME}/build-tools/28.0.3:${PATH}"
+export PATH="${ANDROID_HOME}/build-tools/34.0.0:${PATH}"
 
 pushd app
 aapt package -M AndroidManifest.xml -S res/ \
-  -I "${ANDROID_HOME}/platforms/android-28/android.jar" \
+  -I "${ANDROID_HOME}/platforms/android-34/android.jar" \
   -F overlay.apk.u
 
 keytool -genkey -v -keystore key.keystore -storepass android -keypass android -alias androidkey -dname "CN=Android,O=Android,C=US"
